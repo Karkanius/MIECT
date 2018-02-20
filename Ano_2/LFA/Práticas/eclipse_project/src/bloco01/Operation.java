@@ -92,25 +92,20 @@ public class Operation {
 	 */
 	
 	public double getResult() {
-		double retValue;
 		switch(this.operator) {
+			case '^':
+				return Math.pow(this.first, this.second);
 			case '*':
-				retValue = this.first * this.second;
-				break;
+				return this.first * this.second;
 			case '/':
-				retValue = this.first / this.second;
-				break;
+				return this.first / this.second;
 			case '+':
-				retValue = this.first + this.second;
-				break;
+				return this.first + this.second;
 			case '-':
-				retValue = this.first - this.second;
-				break;
+				return this.first - this.second;
 			default:
-				retValue = 0;
-				break;
+				return 0;
 		}
-		return retValue;
 	}
 	
 	public static void checkValidOperator(char operator) {
@@ -119,6 +114,7 @@ public class Operation {
 			case '-':
 			case '*':
 			case '/':
+			case '^':
 				break;
 			default:
 				System.err.println("Invalid operator");

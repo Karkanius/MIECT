@@ -9,10 +9,10 @@ package bloco01;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.regex.Pattern;
 
 import KarkaniusUtils.READ;
 
+@SuppressWarnings("unlikely-arg-type")
 public class prob05 {
 
 	static HashMap<String, Double> reg = new HashMap<>();
@@ -44,11 +44,12 @@ public class prob05 {
 					reg.put(elems[0], Double.parseDouble(elems[1]));
 				} catch (NumberFormatException e) {
 					for(int i=0; i<elems[1].length(); i++) {
-						if(Arrays.asList(operatorChar).contains(elems[1].charAt(i))) { reg.put(elems[0], operationSolve(elems[1])); }
+						for (char c : operatorChar) {
+						    if (c == elems[1].charAt(i)) { reg.put(elems[0], operationSolve(elems[1])); }
+						}
 					}
 				}
 			}
-			reg.put(elems[0], Double.parseDouble(elems[1]));
 		}
 		
 		//Variable Value Print
@@ -76,10 +77,8 @@ public class prob05 {
 					Double.parseDouble(elems[1]);
 					return true;
 				} catch (NumberFormatException e) {
-					for(int i=0; i<elems[1].length(); i++) {
-						if(Arrays.asList(operatorChar).contains(elems[1].charAt(i))) { return true; }
-					}
-					return false;
+					if(isOperation(elems[1])) { return true; }
+					else { return false; }
 				}
 			} else {
 				return false;
@@ -88,7 +87,7 @@ public class prob05 {
 			return false;
 		}
 	}
-	
+
 	//Variable Value Print
 	private static boolean isVVP(String instruction) {
 		if((instruction!="") && (Character.isLetter(instruction.charAt(0)))) {
@@ -103,31 +102,31 @@ public class prob05 {
 		return false;
 	}
 	
-	
-	
 	//Arithmetic Calculus
 	private static double operationSolve(String operation) {
 		for(int i=0; i<operation.length(); i++) {
-			if(Arrays.asList(operatorChar).contains(operation.charAt(i))) {
-				String a = operation.substring(0, i);
-				String b = operation.substring(i+1);
-				double first, second;
-				if(isNumber(a)) { first = Double.parseDouble(a); }
-				else { first = reg.get(a); }
-				if(isNumber(b)) { second = Double.parseDouble(b); }
-				else { second = reg.get(b); }
-				switch(operation.charAt(i)) {
-					case '+':
-						return first + second;
-					case '-':
-						return first - second;
-					case '*':
-						return first * second;
-					case '/':
-						return first / second;
-					default:
-						return 0;
-				}
+			for (char c : operatorChar) {
+			    if (c == operation.charAt(i)) {
+					String a = operation.substring(0, i);
+					String b = operation.substring(i+1);
+					double first, second;
+					if(isNumber(a)) { first = Double.parseDouble(a); }
+					else { first = reg.get(a); }
+					if(isNumber(b)) { second = Double.parseDouble(b); }
+					else { second = reg.get(b); }
+					switch(operation.charAt(i)) {
+						case '+':
+							return first + second;
+						case '-':
+							return first - second;
+						case '*':
+							return first * second;
+						case '/':
+							return first / second;
+						default:
+							return 0;
+					}
+			    }
 			}
 		}
 		return 0;
@@ -138,7 +137,7 @@ public class prob05 {
 	{  
 	  try  
 	  {  
-	    double d = Double.parseDouble(str);  
+	    Double.parseDouble(str);
 	  }  
 	  catch(NumberFormatException nfe)  
 	  {  
@@ -146,5 +145,20 @@ public class prob05 {
 	  }  
 	  return true;  
 	}
-
+	
+	//isOperation
+	private static boolean isOperation(String str) {
+		for(int i=0; i<str.length(); i++) {
+			if(isOperator(str.charAt(i))) { return true; }
+		}
+		return false;
+	}
+	
+	//isOperator
+	private static boolean isOperator(char target) {
+		for (char c : operatorChar) {
+		    if (c == target) { return true; }
+		}
+		return false;
+	}
 }
