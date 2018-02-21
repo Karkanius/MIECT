@@ -7,14 +7,11 @@
 
 package bloco01;
 
-import java.util.Stack;
 import java.util.regex.Pattern;
 
 import KarkaniusUtils.READ;
 
 public class prob01 {
-	
-	static Stack<Double> operands = new Stack<Double>();
 
 	public static void main(String[] args) {
 		
@@ -37,6 +34,10 @@ public class prob01 {
 		
 		operation = cleanWhiteSpaces(operation);
 		int beginIndex=0;
+		double d=0;
+		try {
+			d = Double.parseDouble(operation);
+		} catch (NumberFormatException e) { }
 		
 		// SEARCH FOR:
 		
@@ -49,7 +50,7 @@ public class prob01 {
 				} else if(operation.charAt(i)==')') {
 					int index = beginIndex;
 					String subOp = operation.substring(index+1, i);
-					double d = SOLVE_OPERATION(subOp);
+					d = SOLVE_OPERATION(subOp);
 					operation = operation.substring(0,index)+d+operation.substring(i+1);
 					return SOLVE_OPERATION(operation);
 				}
@@ -61,7 +62,6 @@ public class prob01 {
 		else if(operation.contains("^")) {
 			String [] elems = operation.split("[\\+\\-\\*\\/]");
 			String subOp;
-			double d;
 			for(String str : elems) {
 				if(str.contains("^")) {
 					subOp = str;
@@ -73,14 +73,11 @@ public class prob01 {
 					} catch (ArrayIndexOutOfBoundsException e) {
 						operation = "";
 					}
-					try {
-						for(int i=1; i<aux.length; i++) {
-							operation += d+aux[i];
-						}
-					} catch (ArrayIndexOutOfBoundsException e) {
-						return d;
+					for(int i=1; i<aux.length; i++) {
+						operation += d+aux[i];
 					}
-					return SOLVE_OPERATION(operation);
+					if(operation.equals("")) { return d; }
+					return SOLVE_OPERATION(operation+d);
 				}
 			}
 		}
@@ -88,13 +85,12 @@ public class prob01 {
 		// 3 - Multiplication/Division
 
 		else if((operation.contains("*"))||(operation.contains("/"))) {
-			String [] elems = operation.split("\\+\\-");
+			String [] elems = operation.split("[\\+\\-]");
 			String subOp;
-			double d;
 			for(String str : elems) {
 				if(str.contains("*")) {
 					subOp = str;
-					String [] operators = subOp.split("\\*\\/]");
+					String [] operators = subOp.split("[\\*\\/]");
 					d = Double.parseDouble(operators[0]) * Double.parseDouble(operators[1]);
 					String [] aux = operation.split(Pattern.quote(subOp));
 					try {
@@ -113,7 +109,7 @@ public class prob01 {
 				}
 				else if(str.contains("/")) {
 					subOp = str;
-					String [] operators = subOp.split("\\*\\/");
+					String [] operators = subOp.split("[\\*\\/]");
 					d = Double.parseDouble(operators[0]) / Double.parseDouble(operators[1]);
 					String [] aux = operation.split(Pattern.quote(subOp));
 					try {
@@ -136,10 +132,9 @@ public class prob01 {
 		// 4 - Addiction/Subtraction
 
 		else if((operation.contains("+"))||(operation.contains("-"))) {
-			double d;
 			if(operation.contains("+")) {
-				String [] operators = operation.split("\\+\\-]");
-				d = Double.parseDouble(operators[0]) * Double.parseDouble(operators[1]);
+				String [] operators = operation.split("[\\+\\-]");
+				d = Double.parseDouble(operators[0]) + Double.parseDouble(operators[1]);
 				String [] aux = operation.split(Pattern.quote(operation));
 				try {
 					operation = aux[0];
@@ -153,11 +148,11 @@ public class prob01 {
 				} catch (ArrayIndexOutOfBoundsException e) {
 					return d;
 				}
-				return SOLVE_OPERATION(operation);
+				return SOLVE_OPERATION(operation+d);
 			}
 			else if(operation.contains("-")) {
-				String [] operators = operation.split("\\+\\-");
-				d = Double.parseDouble(operators[0]) / Double.parseDouble(operators[1]);
+				String [] operators = operation.split("[\\+\\-]");
+				d = Double.parseDouble(operators[0]) - Double.parseDouble(operators[1]);
 				String [] aux = operation.split(Pattern.quote(operation));
 				try {
 					operation = aux[0];
@@ -171,10 +166,10 @@ public class prob01 {
 				} catch (ArrayIndexOutOfBoundsException e) {
 					return d;
 				}
-				return SOLVE_OPERATION(operation);
+				return SOLVE_OPERATION(operation+d);
 			}
 		}
-		return Double.parseDouble(operation);
+		return d;
 	}
 
 	public static String FETCH_OPERATION() {
