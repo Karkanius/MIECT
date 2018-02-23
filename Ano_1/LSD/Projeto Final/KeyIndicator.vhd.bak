@@ -1,0 +1,71 @@
+library ieee;
+use     ieee.std_logic_1164.all;
+use     ieee.numeric_std.all;
+
+entity KeyIndicator is
+  port
+  (
+    dataIn	: in	std_logic_vector (7 downto 0);
+	 dataOut	: out	std_logic_vector (3 downto 0)
+  );
+end KeyIndicator;
+
+
+architecture Behavioral of KeyIndicator is
+
+begin
+	
+	process (dataIn)
+	begin
+		case dataIn is
+			when "01100001" =>		--"a"
+			  dataOut <= "0001";
+			
+			when "01110111" =>		--"w"
+				dataOut <= "0010";
+			
+			when "01110111" =>		--"s"
+			  dataOut <= "0011";
+			
+			when "01100101" =>		--"e"
+				dataOut <= "0100";
+			
+			when "01100100" =>		--"d"
+			  dataOut <= "0101";
+			
+			when "01100110" =>		--"f"
+				dataOut <= "0110";
+			
+			when "01110100" =>		--"t"
+			  dataOut <= "0111";
+			
+			when "01100111" =>		--"g"
+				dataOut <= "1000";
+			
+			when "01111001" =>		--"y"
+			  dataOut <= "1001";
+			
+			when "01101000" =>		--"h"
+				dataOut <= "1010";
+			
+			when "01110101" =>		--"u"
+			  dataOut <= "1011";
+			
+			when "01101010" =>		--"j"
+				dataOut <= "1100";
+			
+			when "01101011" =>		--"k"
+			  dataOut <= "1101";
+			
+			when "01101111" =>		--"o"
+				dataOut <= "1110";
+			
+			when "01101100" =>		--"l"
+			  dataOut <= "1111";
+			
+			when others =>
+				dataOut <= "0000";
+		end case;
+	end process;
+
+end Behavioral;

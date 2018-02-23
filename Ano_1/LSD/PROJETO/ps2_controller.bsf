@@ -1,0 +1,127 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 280 224)
+	(text "ps2_controller" (rect 5 0 60 12)(font "Arial" ))
+	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 20 12)(font "Arial" ))
+		(text "clock" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 20 12)(font "Arial" ))
+		(text "reset" (rect 21 43 41 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "keyboard_leds[2..0]" (rect 0 0 79 12)(font "Arial" ))
+		(text "keyboard_leds[2..0]" (rect 21 59 100 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 264 64)
+		(output)
+		(text "keyboard_detected" (rect 0 0 76 12)(font "Arial" ))
+		(text "keyboard_detected" (rect 167 59 243 71)(font "Arial" ))
+		(line (pt 264 64)(pt 248 64)(line_width 1))
+	)
+	(port
+		(pt 264 80)
+		(output)
+		(text "key_code[7..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "key_code[7..0]" (rect 183 75 243 87)(font "Arial" ))
+		(line (pt 264 80)(pt 248 80)(line_width 3))
+	)
+	(port
+		(pt 264 96)
+		(output)
+		(text "valid_key_code" (rect 0 0 63 12)(font "Arial" ))
+		(text "valid_key_code" (rect 180 91 243 103)(font "Arial" ))
+		(line (pt 264 96)(pt 248 96)(line_width 1))
+	)
+	(port
+		(pt 264 112)
+		(output)
+		(text "mouse_detected" (rect 0 0 66 12)(font "Arial" ))
+		(text "mouse_detected" (rect 177 107 243 119)(font "Arial" ))
+		(line (pt 264 112)(pt 248 112)(line_width 1))
+	)
+	(port
+		(pt 264 128)
+		(output)
+		(text "mouse_delta_x[8..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "mouse_delta_x[8..0]" (rect 162 123 243 135)(font "Arial" ))
+		(line (pt 264 128)(pt 248 128)(line_width 3))
+	)
+	(port
+		(pt 264 144)
+		(output)
+		(text "mouse_delta_y[8..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "mouse_delta_y[8..0]" (rect 161 139 243 151)(font "Arial" ))
+		(line (pt 264 144)(pt 248 144)(line_width 3))
+	)
+	(port
+		(pt 264 160)
+		(output)
+		(text "mouse_buttons[2..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "mouse_buttons[2..0]" (rect 162 155 243 167)(font "Arial" ))
+		(line (pt 264 160)(pt 248 160)(line_width 3))
+	)
+	(port
+		(pt 264 176)
+		(output)
+		(text "valid_mouse_data" (rect 0 0 73 12)(font "Arial" ))
+		(text "valid_mouse_data" (rect 170 171 243 183)(font "Arial" ))
+		(line (pt 264 176)(pt 248 176)(line_width 1))
+	)
+	(port
+		(pt 264 32)
+		(bidir)
+		(text "ps2_clk" (rect 0 0 30 12)(font "Arial" ))
+		(text "ps2_clk" (rect 213 27 243 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 1))
+	)
+	(port
+		(pt 264 48)
+		(bidir)
+		(text "ps2_dat" (rect 0 0 31 12)(font "Arial" ))
+		(text "ps2_dat" (rect 212 43 243 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 1))
+	)
+	(parameter
+		"clock_frequency"
+		"50000000.0"
+		""
+		(type "PARAMETER_SIGNED_FLOAT")	)
+	(drawing
+		(rectangle (rect 16 16 248 192)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 280 -64 380 16))
+)

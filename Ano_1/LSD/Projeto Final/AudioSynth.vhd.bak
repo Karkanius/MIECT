@@ -1,0 +1,27 @@
+--Esta vai ser a top-level
+--
+--A arquitetura vai ser do tipo Shell
+--Vai instanciar todas as outras entidades
+
+library ieee;
+use     ieee.std_logic_1164.all;
+use     ieee.numeric_std.all;
+
+
+entity AudioSynth is
+	port(	CLK50 : in std_logic,
+			---outras entradas e saídas
+			);
+end AudioSynth;
+
+architecture Shell of AudioSynth is
+
+--sinais a declarar
+--mais sinais
+
+begin
+
+--instanciação de entidades
+
+
+end Shell;

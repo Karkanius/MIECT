@@ -1,0 +1,30 @@
+# do AudioSynth_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# ** Error: Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying modelsim.ini to C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini
+# ** Error: (vmap-7) Failed to open ini file "C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini" in write mode.
+# 
+# Permission denied. (errno = EACCES)
+# ** Error: (vmap-20) Cannot access for writing file "C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini".
+# 
+# Permission denied. (errno = EACCES)
+# Error in macro ./AudioSynth_run_msim_rtl_vhdl.do line 6
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying modelsim.ini to C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini
+# ** Error: (vmap-7) Failed to open ini file "C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini" in write mode.
+# 
+# Permission denied. (errno = EACCES)
+# ** Error: (vmap-20) Cannot access for writing file "C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini".
+# 
+# Permission denied. (errno = EACCES)
+#     while executing
+# "error [FixExecError $msg]"
+#     (procedure "vmap" line 6)
+#     invoked from within
+# "vmap work rtl_work"

@@ -1,0 +1,2 @@
+cd [path para o diretório atual]
+java -ea Labi

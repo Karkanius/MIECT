@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Bin7SegDecoder is
+		port(binInput : in std_logic_vector(3 downto 0);
+			  decOut_n : out std_logic_vector(6 downto 0));
+end Bin7SegDecoder;
+
+architecture Behavioral of Bin7SegDecoder is
+begin
+	decOut_n <= "0111001" when (binInput = "0001" or binInput = "1011") else -- Dó (com ou sem oitava)
+					"0111111" when (binInput = "0011" or binInput = "0010" or binInput = "1001" or binInput = "1000") else -- Ré ou Réb (com ou sem oitava)
+					"1111001" when (binInput = "0110" or binInput = "0111") else -- Mi ou Mib		
+					"1110001" when (binInput = "0101") else -- Fá
+					"1111101" when (binInput = "0100" or binInput = "1100") else -- Sol ou Solb
+					"1110111" when (binInput = "1101"or binInput = "1111") else -- Lá ou Láb
+					"1111111" when (binInput = "1110" or binInput = "1010") else -- Si ou Sib
+					"0000000";
+end Behavioral;

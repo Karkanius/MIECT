@@ -1,0 +1,42 @@
+
+State Machine - |AudioSynth_tl|VolumeController:vol|PS
+Name PS.FadeIn PS.FadeOut PS.Normal PS.Mute 
+PS.Mute 0 0 0 0 
+PS.Normal 0 0 1 1 
+PS.FadeOut 0 1 0 1 
+PS.FadeIn 1 0 0 1 
+
+State Machine - |AudioSynth_tl|ps2_controller:ps2|state
+Name state.wait_for_third_mouse_byte state.wait_for_second_mouse_byte state.wait_for_first_mouse_byte state.wait_for_enable_mouse_acknowledge state.enable_mouse state.wait_for_keyboard_set_led_data_acknowledge state.send_keyboard_set_led_data state.wait_for_keyboard_set_led_acknowledge state.keyboard_wait_for_change state.wait_for_enable_keyboard_acknowledge state.enable_keyboard state.wait_for_mouse_bat state.wait_for_bat state.wait_for_reset_acknowledge state.periodic_reset state.restart 
+state.restart 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.periodic_reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.wait_for_reset_acknowledge 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.wait_for_bat 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.wait_for_mouse_bat 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.enable_keyboard 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.wait_for_enable_keyboard_acknowledge 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.keyboard_wait_for_change 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.wait_for_keyboard_set_led_acknowledge 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.send_keyboard_set_led_data 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.wait_for_keyboard_set_led_data_acknowledge 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.enable_mouse 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_for_enable_mouse_acknowledge 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_for_first_mouse_byte 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_for_second_mouse_byte 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_for_third_mouse_byte 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |AudioSynth_tl|ps2_controller:ps2|low_level_ps2_controller:ll|state
+Name state.finishing state.waiting_for_acknowledge state.sending state.interrupting state.receiving state.idle 
+state.idle 0 0 0 0 0 0 
+state.receiving 0 0 0 0 1 1 
+state.interrupting 0 0 0 1 0 1 
+state.sending 0 0 1 0 0 1 
+state.waiting_for_acknowledge 0 1 0 0 0 1 
+state.finishing 1 0 0 0 0 1 
+
+State Machine - |AudioSynth_tl|audio_controller:ac|audio_i2c_controller:i2c|state
+Name state.stop_condition state.in_progress state.start_condition state.idle 
+state.idle 0 0 0 0 
+state.start_condition 0 0 1 1 
+state.in_progress 0 1 0 1 
+state.stop_condition 1 0 0 1 

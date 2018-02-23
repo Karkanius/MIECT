@@ -1,0 +1,17 @@
+Membros = {'Espanha', 'Portugal', 'Itália'};
+Teste = {'Itália', 'Polónia', 'França'};
+m = 100;
+k = 3;
+B = Inicializar(m); %Inicializar: zeros(1,m,'uint8');
+
+for i=1:length(Membros)
+	B = IncluirMembro(B,k,Membro{i});
+end
+for i=1:length(Membros)
+	OK = PertenceMembro(B,k,Teste{i});
+	if OK==1
+		fprintf('%s pertence\n', Teste{i})
+	else
+		fprintf('%s não pertence\n', Teste{i})
+	end
+end

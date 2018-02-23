@@ -1,0 +1,39 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity VolumeController is
+	port( start		: in std_logic;
+			clk		: in std_logic;
+			volume	: in std_logic_vector(6 downto 0);
+			sound		: out std_logic_vector(6 downto 0) -- ver quantos bits
+			);
+end VolumeController;
+
+architecture Behavioral of VolumeController is
+
+	type TState is (FadeIn, Normal, FadeOut, Mute);
+	signal PS, NS: TState;
+
+	begin
+	
+	sync_proc: process(clk)
+	begin
+		if(rising_edge(clk)) then
+			PS <= NS;
+		end if;
+	end process;
+	
+	comb_proc: process(start)
+	begin
+		case PS is
+			when Mute =>
+				sound <= "0101111";
+				if (start = '1') then
+					NS <= FadeIn;
+				else
+					NS <= Mute;
+				end if;
+			when FadeIn =>
+				if ()
+	
+

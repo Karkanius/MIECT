@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Jun 05 13:26:56 2017
+Quartus Prime Version : 15.1.1 Build 189 12/02/2015 SJ Lite Edition
+Revision Name : AudioSynth
+Top-level Entity Name : AudioSynth
+Family : Cyclone IV E
+Total logic elements : 601
+    Total combinational functions : 566
+    Dedicated logic registers : 269
+Total registers : 269
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 262,144
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity OctaveCreation is
+generic(N : positive := 4);
+port( dataIn  : in std_logic_vector(3 downto 0);
+		dataOut : out std_logic_vector(4 downto 0));
+end OctaveCreation;
+
+architecture Behavioral of OctaveCreation is
+begin
+	dataOut <= dataIn & '0';
+end Behavioral;

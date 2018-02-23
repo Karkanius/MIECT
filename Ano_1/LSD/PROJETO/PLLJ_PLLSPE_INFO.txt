@@ -1,0 +1,5 @@
+PLL_Name	audio_io:aio|clock_generator:c|altpll:PLL|clock_auto_altpll:auto_generated|pll1
+PLLJITTER	25
+PLLSPEmax	84
+PLLSPEmin	-53
+

@@ -1,0 +1,196 @@
+\documentclass{report}
+\usepackage[T1]{fontenc} % Fontes T1
+\usepackage[utf8]{inputenc} % Input UTF8
+\usepackage[backend=biber, style=ieee]{biblatex} % para usar bibliografia
+\usepackage{csquotes}
+\usepackage[portuguese]{babel} %Usar língua portuguesa
+\usepackage{blindtext} % Gerar texto automaticamente
+\usepackage[printonlyused]{acronym}
+\usepackage{hyperref} % para autoref
+\usepackage{graphicx}
+\usepackage{placeins}
+\bibliography{bibliografia}
+
+
+\begin{document}
+%%
+% Definições
+%
+\def\titulo{Análise de redes de comunicação}
+\def\data{29/11/2015}
+\def\autores{Alexandre Lourenço, Susana Dias}
+\def\autorescontactos{(79894) alexandre.lourenco@ua.pt, (80410) susanadias@ua.pt}
+\def\versao{VERSAO 1.0}
+\def\departamento{Departamento de Eletrónica, Telecomunicações e Informática}
+\def\empresa{Universidade de Aveiro}
+\def\logotipo{ua.pdf}
+%
+%%%%%% CAPA %%%%%%
+%
+\begin{titlepage}
+
+\begin{center}
+%
+\vspace*{50mm}
+%
+{\Huge \titulo}\\ 
+%
+\vspace{10mm}
+%
+{\Large \empresa}\\
+%
+\vspace{10mm}
+%
+{\LARGE \autores}\\ 
+%
+\vspace{30mm}
+%
+\begin{figure}[h]
+\center
+\includegraphics{\logotipo}
+\end{figure}
+%
+\vspace{30mm}
+\end{center}
+%
+\begin{flushright}
+\versao
+\end{flushright}
+\end{titlepage}
+
+%%  Página de Título %%
+\title{%
+{\Huge\textbf{\titulo}}\\
+{\Large \departamento\\ \empresa}
+}
+%
+\author{%
+    \autores \\
+    \autorescontactos
+}
+%
+\date{\data}
+%
+\maketitle
+
+\pagenumbering{roman}
+
+%%%%%% RESUMO %%%%%%
+\begin{Resumo}
+Este trabalho teve como objetivo analisar:
+\vspace{05mm}
+	
+	- a variação da largura de banda em relação ao tamanho dos pacotes enviados;
+	\vspace{02mm}
+	- a variação do numero de pacotes recebidos em função do tamanho dos mesmos.
+\end{abstract}
+
+%%%%%% Agradecimentos %%%%%%
+% Segundo glisc deveria aparecer após conclusão...
+%\renewcommand{\abstractname}{Agradecimentos}
+%\begin{abstract}
+%Eventuais agradecimentos.
+%Comentar bloco caso não existam agradecimentos a fazer.
+%\end{abstract}
+
+
+\tableofcontents
+% \listoftables     % descomentar se necessário
+% \listoffigures    % descomentar se necessário
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introdução}
+\label{chap.introducao}
+
+Através de identificadores é possível a troca de informação em redes. Utilizando o comando ping é possível saber se o endereço de destino respondeu e quanto tempo demorou a receber a resposta. No caso de existir um erro, o endereço ping irá apresentar uma mensagem de erro. 
+A partir daí foram enviados pacotes com diferentes tipos de tamanho de forma a estudar o tempo que o endereço de destino demora a responder e quanto tempo demora a receber uma resposta.
+
+\chapter{Metodologia}
+\label{chap.metodologia}
+
+Para a obtenção dos resultados utilizamos o comando ping, enviando pacotes de diferentes tamanhos para o router de forma a perceber o tempo que este demora a responder e o tempo que demora a receber a resposta. Variando para isso a largura de banda que o comando ping
+produz de forma a controlar a taxa de pacotes e o seu tamanho
+
+
+\chapter{Resultados}
+\label{chap.resultados}
+
+	Através do uso do comando ping no terminal do ubunto foram registados vários testes ao router local, sendo dois deles apresentados de seguida:
+
+%imagens dos resultados obtidos
+ 
+\begin{figure}[!htp]
+\centering
+\includegraphics[scale=0.3]{print1.jpg} 
+\caption{Teste de ping com envio de 250 pacotes com 32 bytes}
+\end{figure}
+ 
+\begin{figure}[!htp]
+\centering
+\includegraphics[scale=0.3]{print1_1.jpg} 
+\caption{Teste de ping com envio de 250 pacotes com 32 bytes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{print2.jpg} 
+\caption{Teste de ping com envio de 250 pacotes com 65000 bytes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{print2_1.jpg} 
+\caption{Teste de ping com envio de 250 pacotes com 65000 bytes}
+\end{figure}
+
+
+\chapter{Análise}
+\label{chap.analise}
+
+Após a recolha dos dados resultantes dos testes de ping foi-nos possível agrupar os valores graficamente de forma a facilitar a obtenção de conclusões.
+Assim sendo foram produzidos dois gráficos, em que relacionam o número de pacotes recebidos com o tamanho dos mesmos e a largura de banda, ou seja, o tempo de resposta do envio dos pacotes (neste caso 250, uma vez que convinha que todos os testes possuíssem o mesmo numero de pacotes para uma posterior comparação de valores) com o seu tamanho, respetivamente. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{grafico1.jpg} 
+\caption{Número de pacotes recebidos em função do tamanho}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{grafico2.jpg} 
+\caption{Largura de banda em função do tamanho}
+\end{figure}
+
+\chapter{Conclusões}
+\label{chap.conclusao}
+
+Partindo da análise dos gráficos acima apresentados, e sabendo que para todos os testes o número de pacotes enviados foi constante, pôde-se constatar que à medida que o tamanho dos pacotes enviados aumentava a largura da banda tendia para zero, chegando mesmo a atingir este valor, contudo a percentagem de pacotes perdidos era muitas vezes superior a 50\% para pacotes com valores superiores a 300 bytes. Contudo, quando se enviam pacotes mais pequenos na ordem dos 32 bytes essas perdas não se verificam, no entanto a largura de banda já ascende neste caso em particular para a casa dos 249474 ms.
+Em suma, para um resultado mais viável compensa mais enviar pacotes mais pequenos de forma a evitar perdas dos mesmos. 
+
+
+\chapter*{Contribuições dos autores}
+
+\ac{al} Recolha de dados, análise e organização (50\%)
+
+\ac{sd} Introdução, metodologia e análise (50\%)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter*{Acrónimos}
+\begin{acronym}
+\acro{ua}[UA]{Universidade de Aveiro}
+\acro{al}[AL]{Alexandre Lourenço}
+\acro{sd}[SD]{Susana Dias}
+\acro{miect}[MIECT]{Mestrado Integrado em Engenharia de Computadores e Telematica}
+\end{acronym}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Bibliografia}
+\printbibliography
+
+\end{document}

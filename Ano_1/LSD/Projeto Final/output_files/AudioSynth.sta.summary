@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'VolumeController:vol|PS.FadeIn'
+Slack : -3.859
+TNS   : -25.544
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -1.479
+TNS   : -9.036
+
+Type  : Slow 1200mV 85C Model Hold 'VolumeController:vol|PS.FadeIn'
+Slack : -0.131
+TNS   : -0.131
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VolumeController:vol|PS.FadeIn'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.539
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'VolumeController:vol|PS.FadeIn'
+Slack : -3.499
+TNS   : -22.779
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.221
+TNS   : -7.654
+
+Type  : Slow 1200mV 0C Model Hold 'VolumeController:vol|PS.FadeIn'
+Slack : -0.116
+TNS   : -0.116
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VolumeController:vol|PS.FadeIn'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.573
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'VolumeController:vol|PS.FadeIn'
+Slack : -1.527
+TNS   : -9.417
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.245
+TNS   : -0.904
+
+Type  : Fast 1200mV 0C Model Hold 'VolumeController:vol|PS.FadeIn'
+Slack : -0.089
+TNS   : -0.099
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.127
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VolumeController:vol|PS.FadeIn'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.375
+TNS   : 0.000
+
+------------------------------------------------------------
