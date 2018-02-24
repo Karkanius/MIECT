@@ -1,0 +1,80 @@
+// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "03/29/2017 10:53:33"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          timer
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module timer_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg reset;
+reg start;
+// wires                                               
+wire pulseOut;
+
+// assign statements (if any)                          
+timer i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.pulseOut(pulseOut),
+	.reset(reset),
+	.start(start)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+initial
+begin
+	repeat(33)
+	begin
+		clk = 1'b0;
+		clk = #15000 1'b1;
+		# 15000;
+	end
+	clk = 1'b0;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b0;
+	reset = #410000 1'b1;
+	reset = #30000 1'b0;
+end 
+
+// start
+initial
+begin
+	start = 1'b0;
+	start = #60000 1'b1;
+	start = #30000 1'b0;
+end 
+endmodule
+

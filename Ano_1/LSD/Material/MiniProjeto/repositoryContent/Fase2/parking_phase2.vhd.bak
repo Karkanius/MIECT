@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity parking_phase2 is
+	port( KEY    : in std_logic_vector(0 downto 0);
+			LEDR   : out std_logic_vector(1 downto 0);
+			LEDG   : out std_logic_vector(8 downto 8));
+end parking_phase2;
+
+
+architecture Shell of parking_phase2 is
+
+signal s_key_start, s_pulseOut
+
+begin
+
+t1: 	 entity work.timer(Behavioral)
+			generic map(TIME_S => 10)	-- Time in seconds (2 s)
+			port map(clk		=> CLOCK_50, 
+						reset 	=> '0',
+						start		=> s_key_start,
+						pulseOut	=> s_pulseOut);
+
+	s_key_start<= not KEY(0);
+	LEDG(8)<=s_pulseOut;
+
+	
+end Shell;
+
+/*A abertura e o fecho da cancela devem ser controlados por duas saídas da placa, do seguinte
+modo: abertura –
+LEDR(0) ativa durante 1 segundo; 
+fecho – LEDR(1) ativa durante 2 segundos. 
+A cancela está aberta durante 10 segundos (1 + 7 + 2) e, durante esse tempo, a
+saída LEDG(8) fica intermitente, piscando a uma frequência de 2Hz.*/

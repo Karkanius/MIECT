@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Mar 30 16:35:01 2017
+Quartus Prime Version : 15.1.1 Build 189 12/02/2015 SJ Lite Edition
+Revision Name : parking_phase1
+Top-level Entity Name : parking_Phase1
+Family : Cyclone IV E
+Total logic elements : 105
+    Total combinational functions : 105
+    Dedicated logic registers : 64
+Total registers : 64
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
