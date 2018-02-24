@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>100Cérebros' Image Gallery</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS and JQuery-->
+    <script src="js/ratchet.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <!-- Custom JS -->
+    <script src="js/main.min.js" defer></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header id="header" class="bar bar-nav">
+      <a class="icon icon-left-nav pull-left" href="gallery.html" data-transition="slide-out"></a>
+      <h1 class="title">100Cérebros' Image Gallery</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content" data-id="image">
+      <div id="imageView">
+
+        <!-- manage image link -->
+        <button id="manageImg" class="btn btn-secondary invisible">Manage Image</button>
+
+        <!-- image -->
+        <img id="mainImg" alt="Image" />
+
+        <!-- author -->
+        <p>Image by <span id="imgAuthor">Ninja S. Amurai</span></p>
+
+        <!-- views -->
+        <p id="views"><span>134</span> views</p>
+
+        <!-- votes -->
+        <div class="votes">
+          <button class="btn upvote inactive">
+            <span class="upvotes selected">57</span>
+            <img src="img/icons/upvotes_btn.png" alt="Upvote">
+            Upvote
+          </button>
+          <button class="btn downvote">
+            <span class="downvotes">22</span>
+            <img src="img/icons/downvotes_btn.png" alt="Downvote">
+            Downvote
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <nav id="footer" class="bar bar-tab">
+      <a id="user" class="tab-item" href="settings.html" data-transition="slide-in">
+        <img class="icon" src="img/icons/avatar_0.png"/>
+        <span class="tab-label">Account Settings</span>
+      </a>
+      <a id="logout" class="tab-item" href="logout.html">
+        <img class="icon" src="img/icons/logout.png"/>
+        <span class="tab-label">Log out</span>
+      </a>
+    </nav>
+  </body>
+</html>

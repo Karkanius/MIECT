@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>100Cérebros' Image Gallery</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS and JQuery-->
+    <script src="js/ratchet.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <!-- Custom JS -->
+    <script src="js/main.min.js" defer></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header id="header" class="bar bar-nav">
+      <a class="icon icon-left-nav pull-left" href="gallery.html" data-transition="slide-out"></a>
+      <h1 class="title">100Cérebros' Image Gallery</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content" data-id="effectify">
+      <div id="effectify">
+        <!-- loading animation -->
+        <div class="invisible" id="loading">
+          <img src="img/icons/loading_2.gif">
+        </div>
+
+        <!-- image -->
+        <img id="mainImg" src="" alt="Image" />
+
+        <!-- undo and submit buttons -->
+        <div class="buttonGroup">
+          <button id="undo" class="btn btn-secondary">Undo</button>
+          <button type="submit" class="btn btn-positive ">Submit</button>
+        </div>
+
+        <!-- editing options/ effects list -->
+        <div id="effectsList">
+          <button type="button" name="rotate" class="previewOption">
+            <img src="img/icons/edit.png" alt="Rotate"> <!-- 16 times -->
+            <label for="rotate">Rotate</label>
+          </button>
+          <button type="button" name="moreContrast" class="previewOption">
+            <img src="img/icons/edit.png" alt="More Contrast">
+            <label for="moreContrast">More Contrast</label>
+          </button>
+          <button type="button" name="lessContrast" class="previewOption">
+            <img src="img/icons/edit.png" alt="Less Contrast">
+            <label for="lessContrast">Less Contrast</label>
+          </button>
+          <button type="button" name="moreSaturation" class="previewOption">
+            <img src="img/icons/edit.png" alt="More Saturation">
+            <label for="moreSaturation">More Saturation</label>
+          </button>
+          <button type="button" name="lessSaturation" class="previewOption">
+            <img src="img/icons/edit.png" alt="Less Saturation">
+            <label for="lessSaturation">Less Saturation</label>
+          </button>
+          <button type="button" name="moreLuminosity" class="previewOption">
+            <img src="img/icons/edit.png" alt="More Luminosity">
+            <label for="moreLuminosity">More Luminosity</label>
+          </button>
+          <button type="button" name="lessLuminosity" class="previewOption">
+            <img src="img/icons/edit.png" alt="Less Luminosity">
+            <label for="lessLuminosity">Less Luminosity</label>
+          </button>
+          <button type="button" name="change_2bpp" class="previewOption">
+            <img src="img/icons/edit.png" alt="Reduce Pallete">
+            <label for="change_2bpp">Reduce Pallete</label>
+          </button>
+          <button type="button" name="blur" class="previewOption">
+            <img src="img/icons/edit.png" alt="Blur">
+            <label for="blur">Blur</label>
+          </button>
+          <button type="button" name="negative" class="previewOption">
+            <img src="img/icons/edit.png" alt="Negative">
+            <label for="negative">Negative</label>
+          </button>
+          <button type="button" name="blackWhite" class="previewOption">
+            <img src="img/icons/edit.png" alt="Black and White">
+            <label for="blackWhite">Black &amp; White</label> <!-- Black &amp; White -->
+          </button>
+          <button type="button" name="sepia" class="previewOption">
+            <img src="img/icons/edit.png" alt="Sepia">
+            <label for="sepia">Sepia</label>
+          </button>
+          <button type="button" name="isEdge" class="previewOption">
+            <img src="img/icons/edit.png" alt="Edge Detection">
+            <label for="isEdge">Edge Detection</label>
+          </button>
+          <button type="button" name="oldPhoto" class="previewOption">
+            <img src="img/icons/edit.png" alt="Old Photo">
+            <label for="oldPhoto">Old Photo</label>
+          </button>
+          <button type="button" name="pencilDraw" class="previewOption">
+            <img src="img/icons/edit.png" alt="Pencil Draw">
+            <label for="pencilDraw">Pencil Drawing</label>
+          </button>
+          <button type="button" name="colorDraw" class="previewOption">
+            <img src="img/icons/edit.png" alt="Color Draw">
+            <label for="colorDraw">Color Draw</label>
+          </button>
+          <button type="button" name="circlesBlack" class="previewOption">
+            <img src="img/icons/edit.png" alt="Black Cartoon Dots">
+            <label for="circlesBlack">Black Dots</label>
+          </button>
+          <button type="button" name="circlesWhite" class="previewOption">
+            <img src="img/icons/edit.png" alt="White Cartoon Dots">
+            <label for="circlesWhite">White Dots</label>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <nav id="footer" class="bar bar-tab">
+      <a id="user" class="tab-item" href="settings.html" data-transition="slide-in">
+        <img class="icon" src="img/icons/avatar_0.png"/>
+        <span class="tab-label">Account Settings</span>
+      </a>
+      <a id="logout" class="tab-item" href="logout.html">
+        <img class="icon" src="img/icons/logout.png"/>
+        <span class="tab-label">Log out</span>
+      </a>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,496 @@
+/*******************************
+ * global (multi-page) styles
+ *
+ * primary color: #E6C18C
+ *
+ *******************************/
+
+ /* app's body */
+ #header + .content {
+   padding-top: 17%;
+ }
+ .content {
+  padding: 0 3%;
+  padding-bottom: 100px; /* compensate for bar on bottom of screen */
+}
+
+/* non-display, emphasize and de-emphasize classes */
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+.selected {
+  opacity: 1 !important;
+  font-weight: bold;
+}
+.not-selected {
+  color: #858585 !important;
+}
+span.small {
+  font-size: 80%;
+}
+/* app's own button color scheme */
+.btn-secondary {
+  color: white;
+  background-color: #cf8a35; /*#E6C18C;*/
+  border: 1px solid #c48333; /* #D5B384; */
+}
+ .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus{
+  color: white;
+  background-color: #c48333; /* #D5B384; */
+  border: 1px solid #c48333; /* #D5B384; */
+}
+
+/* page titles */
+h3 {
+  width: 100%;
+  border-bottom: 1px solid #E6C18C;
+}
+h3 span.small {
+  margin-left: 3%;
+}
+
+/* header bar */
+.bar .icon {
+  color: grey;
+}
+
+/* footer bar */
+#footer {
+   border-right: 1px solid #ccc;
+   box-shadow: 5px 2px 5px grey;
+}
+
+#footer a {
+  color: black;
+  box-shadow: 4px 0 3px -5px grey, -4px 0 3px -5px grey;
+}
+
+/* image upload */
+#getMedia input{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+#getMedia span {
+  position: absolute;
+  top: 27px;
+  font-size: 40%;
+  right: 5px;
+  color: #666;
+}
+#loading {
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+}
+#loading img {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  z-index: 1000;
+}
+
+/*******************************
+ * index.html specific styles
+ *******************************/
+#logo {
+  padding: 10% 0 17% 0;
+}
+#logo > img {
+  width:100%;
+  margin: 5% 0 10% 0;
+}
+#logo > h2.subtitle {
+  margin-top: 5%;
+  text-align: right;
+}
+#copy {
+   position:absolute;
+   bottom:0;
+}
+#loginMessage {
+  color: #6ebb57;
+  text-align: center;
+  padding-top: 5%;
+}
+
+/*******************************
+ * home.html specific styles
+ *******************************/
+#browse {
+  margin-bottom: 10%;
+  border: none;
+}
+#browse li {
+  padding-bottom: 5%;
+  border-bottom: 1px solid #ddd;
+}
+#browse li:last-child {
+  padding-top: 5%;
+  border: none;
+}
+#browse li img.media-object {
+  width: 49%;
+  margin-right: 10%;
+}
+#browse li div.media-body {
+  padding-top: 4%;
+}
+.btn-upload {
+  width: 100%;
+  margin-top: 5%;
+}
+
+
+/*******************************
+ * imageUpload.html specific styles
+ *******************************/
+#imageOptions li.meme {
+  width: 100%;
+}
+#imageOptions li img.media-object {
+  max-width: 49%;
+  margin-right: 10%;
+}
+#imageOptions #memeText {
+  width: 49%;
+  float: left;
+  margin-top: -14%;
+}
+#imageOptions .media-body {
+  margin-top: 4%;
+}
+
+/*******************************
+ * gallery.html and all.html specific styles
+ *******************************/
+/* images styles */
+#gallery ul, #imgList {
+	 display: -webkit-flex;
+   display: flex;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
+   -webkit-align-content: center;
+   align-content: center;
+
+   /* TODO mansonrary style
+	-ms-flex-direction: column;
+  -ms-flex-wrap: wrap;
+  display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 250vw;*/
+}
+#gallery h4 {
+  width: 100%;
+}
+.gallery-view {
+   margin-top: 10%;
+   border: none;
+}
+.gallery-view li {
+   padding: 2% 0 2% 0;
+   width: 45%;
+   max-height: 10%;
+   display: inline-block;
+   border: none;
+   padding-bottom: 20px;
+   vertical-align: top;
+   margin-right: 6%;
+}
+.gallery-view li:nth-child(odd), #imgList li:nth-child(even) {
+   margin-right: 0;
+}
+#imgList li:nth-child(odd) {
+  margin-right: 6%;
+}
+.gallery-view li a {
+  position: static !important;
+  display: inline !important;
+}
+.gallery-view li img{
+  width: 100%;
+}
+/* sort "dropdown" */
+#toggleSort {
+  position: absolute;
+  right: 5%;
+  margin-top: -2%;
+  color: #aaa;
+  font-size: 60%;
+  border: none;
+  background: white;
+}
+#toggleSort span {
+  font-size: 60%;
+  text-decoration: none;
+}
+#toggleSort span.underline {
+  font-size: 100%;
+  text-decoration: underline;
+}
+#sort {
+  margin-top: 9%;
+}
+#sort li:nth-child(odd) {
+  background-color: #fefefe;
+}
+#sort li:nth-child(even) {
+  background-color: #efefef;
+}
+#sort li a:active {
+  background-color: #dfdfdf !important;
+}
+/* images' votes */
+.votes {
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-size: 90%;
+  text-align: right;
+}
+.votes img{
+  height: 15px;
+  width: 15px !important;
+}
+.votes .upvotes {
+  width: 10%;
+  color: #6C8556;
+  padding-right: 10%;
+}
+.votes .downvotes {
+  width: 10%;
+  color: #864C4C;
+}
+.votes .upvotes + img {
+  position: relative;
+  top: 3px;
+}
+
+/*******************************
+ * image.html specific styles
+ *******************************/
+#imageView {
+  padding: 0 3% 0 3%;
+  text-align: center;
+}
+#imageView #manageImg {
+  float: right;
+  margin: 0 0 1%;
+  margin-left: 60%;
+}
+#imageView img {
+  max-width: 100%;
+  max-height: 60vh;
+  margin: 2% 0 4% 0;
+}
+#imageView p {
+  width: 100%;
+  text-align: center;
+}
+#imageView #views {
+  font-size: 120%;
+  color: black;
+  margin: 5% 0 10%;
+}
+#imageView .votes {
+  position: static;
+  text-align: center;
+  width: 100%;
+  margin-top: 5%;
+}
+#imageView .votes button {
+  padding: 2.5% 0 4% 0;
+  margin: 0 4% 0 4%;
+  width: 40%;
+  color: white;
+  text-align: center;
+}
+#imageView .votes button.upvote {
+  background-color: #6C8556;
+}
+#imageView .votes button.downvote {
+  background-color: #864C4C;
+}
+#imageView .votes button.upvote .upvotes,
+#imageView .votes button.downvote .downvotes {
+  color: white;
+  padding: 0;
+  position: static;
+}
+#imageView .votes button.upvote img,
+#imageView .votes button.downvote img {
+  margin: 0 10px 0 0;
+}
+#imageView .votes button.downvote img {
+  position: relative;
+  top: 4px;
+}
+#imageView .votes button.inactive {
+  background-color: #ccc;
+}
+
+
+/*******************************
+ * effectifyImage.html specific styles
+ *******************************/
+#effectify {
+  text-align: center;
+}
+#effectsList {
+  width: 100%;
+  margin: 0 auto 70px auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: center;
+  align-content: center;
+ }
+ #mainImg {
+   max-width: 100%;
+   max-height: 60vh;
+   margin: 5% 0 7% 0;
+ }
+ button.previewOption {
+  width: 50px;
+  height: 65px;
+  display: inline-block;
+  margin-bottom: 6%;
+  margin-right: 3%;
+}
+button.previewOption label {
+  height: 15px;
+  display: inline-block;
+  color: #999;
+  font-size: 56%;
+  position: relative;
+  width: 50px;
+  top: -5px;
+  left: -6px;
+  line-height: 1.2;
+  vertical-align: top;
+}
+button.previewOption img {
+  margin-left: -7px;
+  width: 50px;
+  height: 50px;
+}
+.buttonGroup {
+  width: 100%;
+  padding: 2% 6% 8% 5.5%;
+  text-align: left;
+}
+.buttonGroup button{
+  padding: 4%;
+}
+.buttonGroup button[type="submit"] {
+  float: right;
+  width: 40%;
+}
+
+/*******************************
+ * memefyImage.html specific styles
+ *******************************/
+#memefy .input-row {
+  margin-bottom: 2%;
+}
+#memefy .input-row label {
+  font-size: 70%;
+  text-align: right;
+}
+#memefy .buttonGroup {
+  margin-top: 12%;
+}
+
+
+/*******************************
+ * accountSettings.html specific styles
+ *******************************/
+#settingsPage {
+  padding-left: 0;
+  padding-right: 0;
+}
+#settingsPage h3 {
+  margin-left: 3%;
+}
+#username {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10% 0 0 0;
+  margin-left: -5%;
+  max-width: 50%;
+}
+#userAvatar {
+  display: inline-block;
+  max-width: 128px;
+  width: 40%;
+}
+.accountInfo {
+  margin: 10% 0;
+  padding: 0 3%;
+}
+.accountInfo h5 {
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
+}
+#changeUsername {
+  margin: 15% 2%;
+  padding: 0 3%;
+}
+#changeUsername button {
+  margin-top: 12%;
+  float: right;
+}
+#avatarModal img {
+  max-width: 128px;
+  width: 30%;
+  margin-right: 2%;
+  margin-top: 2.5%;
+}
+.wrapper {
+  padding: 0 3%;
+}
+
+
+/*******************************
+ * logOut.html specific styles
+ *******************************/
+#logoutMessage {
+  color: #cf8a35;
+  text-align: center;
+  padding-top: 5%;
+}
+
+/*******************************
+ * manageImage.html specific styles
+ *******************************/
+#manageImage p {
+  margin-bottom: 10%;
+}
+#manageImage p span {
+  font-weight: bold;
+}
+#manageImage .buttonGroup {
+ padding: 2% 6% 8% 0;
+}
+#manageImage .buttonGroup .btn-negative {
+ float: right;
+}
