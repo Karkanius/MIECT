@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>home</title>
+<meta name="viewport"
+content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="../css/ratchet.css">
+<link rel="stylesheet" href="../css/ratchet-theme-android.css">
+<link rel="stylesheet" href="../css/app.css">
+<link class="jsbin" href="../css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../js/ratchet.js"></script>
+</head>
+<body>
+<link rel="stylesheet" href="../css/ratchet-theme-android.css"><!--Esta aqui para atualizar Inlock-->
+
+<style>.select-wrapper4 {
+        background: url(HTML_img/cm.png) no-repeat;
+        background-size: cover;
+        display: block;
+        position: absolute;
+        top:-5%;
+        left:5%;
+        width: 45px;
+        height: 45px;
+      }
+
+      .image_src {
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }</style>
+<header class="bar bar-nav">
+  
+<a class="tab-item" href="#">
+	<div class="btn-group" data-toggle="buttons">
+		<div class="container">
+			<span class="select-wrapper4"><input id="files2"class="image_src" type="file" accept="image/*" onchange="readURL(this);" name="image_src" /></span>
+		</div>
+	</div>
+</a>
+
+<img class="media-object pull-left" src="HTML_img/head.png" alt="def.jpg" style="width:400px;height:50px;">
+	
+</header>
+
+<nav class="bar bar-tab">
+	<!--Home-->
+	<a class="tab-item active" href="home.html" data-transition="slide-in">
+		<span class="icon icon-home"></span>
+		<span class="tab-label">Home</span>
+	</a>
+
+	<!--Editor-->
+	<a class="tab-item" href="editor.html" data-transition="slide-in">
+		<span class="icon icon-share" ></span>
+		<span class="tab-label">Upload</span>
+	</a>
+
+	<!--Settings-->
+	<a class="tab-item" href="settings.html" data-transition="slide-in">
+		<span class="icon icon-gear"></span>
+		<span class="tab-label">Settings</span>
+	</a>
+</nav>
+
+
+
+
+
+<div class="content">
+<ul class="table-view">
+<li class="table-view-cell"> 
+<div class="upvote">
+
+</div></li>
+
+</ul>
+</div>
+<script>
+    document.getElementById("files2").onchange = function () {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("gallery").src = e.target.result;
+         };
+        reader.readAsDataURL(this.files[0]);
+     };
+  </script>
+</body>
+</html>
+
+

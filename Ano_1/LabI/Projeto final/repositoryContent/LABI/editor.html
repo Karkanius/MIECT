@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>editor</title>
+<meta name="viewport"
+content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/ratchet.css">
+<link rel="stylesheet" href="css/ratchet-theme-android.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/webcam.js"></script>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/ratchet.js"></script>
+</head>
+<body>
+<link rel="stylesheet" href="css/ratchet-theme-android.css"><!--Esta aqui para atualizar Inlock-->
+
+<header class="bar bar-nav">
+    
+<img class="media-object pull-left" src="head.png" alt="def.jpg" style="width:400px;height:50px;">
+	
+</header>
+
+<nav class="bar bar-tab">
+  <a class="tab-item" href="home.html" data-transition="slide-in">
+    <span class="icon icon-home"></span>
+    <span class="tab-label">Home</span>
+  </a>
+   <a class="tab-item">
+    <span class="icon icon-search"></span>
+    <span class="tab-label">Search</span>
+  </a>
+
+    <a class="tab-item active">
+        <span class="icon icon-share"></span>
+    <span class="tab-label">Upload</span>
+  </a>
+
+    <a class="tab-item" href="profile.html" data-transition="slide-in">
+
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Profile</span>
+
+  </a>
+
+
+  <a class="tab-item" href="settings.html" data-transition="slide-in">
+    <span class="icon icon-gear"></span>
+    <span class="tab-label">Settings</span>
+  </a>
+</nav>
+
+
+
+
+
+<div class="content">
+<ul class="table-view">
+
+<form>
+  
+  <input type="text" placeholder="Post Title">
+<div class="segmented-control">
+  <a class="control-item" href="#item1mobile">
+    Thing one
+  </a>
+  <a class="control-item" href="#item2mobile">
+    Thing two
+  </a>
+  <a class="control-item" href="#item3mobile">
+    Thing three
+  </a>
+  <a class="control-item" href="#item4mobile">
+    Thing four
+  </a>
+    <a class="control-item" href="#item5mobile">
+    Thing five
+  </a>
+</div>	
+	<!-- Gerador de memes -->
+	<a href="#myModalexample" class="btn btn-primary btn-block">MEMES</span></a></li>
+<div id="myModalexample" class="modal">
+  <header class="bar bar-nav">
+    <a class="icon icon-close pull-right" href="#myModalexample"></a>
+    <h1 class="title">MEMES</h1>
+  </header>
+
+  <div class="content">
+    <p class="content-padded">
+	<form>
+  <input type="text" placeholder="TOP TEXT">
+  <input type="text" placeholder="BOTTOM TEXT">
+  
+  <button class="btn btn-positive btn-block">Apply</button>
+</form>
+
+	</p>
+  </div>
+
+
+</div>
+<input type="file" id="image_to_upload"/>
+
+
+  <button class="btn btn-positive btn-block">UPLOAD</button>
+</form>
+
+
+</ul>
+</div>
+</body>
+<script type="text/javascript">
+    jQuery.noConflict();    
+    formdata = new FormData();      
+    jQuery("#image_to_upload").on("change", function() {
+        var file = this.files[0];
+        if (formdata) {
+            formdata.append("image", file);
+            jQuery.ajax({
+                url: "destination_ajax_file.php",
+                type: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+                success:function(){}
+            });
+        }                       
+    }); 
+</script>
+</html>

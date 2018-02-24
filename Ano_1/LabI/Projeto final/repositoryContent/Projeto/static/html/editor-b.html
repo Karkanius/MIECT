@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>editor-B</title>
+<meta name="viewport"
+content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="../css/ratchet.css">
+<link rel="stylesheet" href="../css/ratchet-theme-android-B.css">
+<link rel="stylesheet" href="../css/app.css">
+<script src="js/webcam.js"></script>
+<link class="jsbin" href="../css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../js/ratchet.js"></script>
+</head>
+<body>
+<link rel="stylesheet" href="../css/ratchet-theme-android-B.css"><!--Esta aqui para atualizar Inlock-->
+
+<header class="bar bar-nav">
+    
+<img class="media-object pull-left" src="HTML_img/head.png" alt="def.jpg" style="width:400px;height:50px;">
+	
+</header>
+
+<nav class="bar bar-tab">
+	<!--Home-->
+	<a class="tab-item" href="home-b.html" data-transition="slide-in">
+		<span class="icon icon-home"></span>
+		<span class="tab-label">Home</span>
+	</a>
+
+	<!--Editor-->
+	<a class="tab-item active" href="editor-b.html" data-transition="slide-in">
+		<span class="icon icon-share" ></span>
+		<span class="tab-label">Upload</span>
+	</a>
+
+	<!--Settings-->
+	<a class="tab-item" href="settings-b.html" data-transition="slide-in">
+		<span class="icon icon-gear"></span>
+		<span class="tab-label">Settings</span>
+	</a>
+</nav>
+
+
+
+
+
+<div class="content">
+<ul class="table-view">
+
+<form>
+  
+  <input type="text" placeholder="Post Title">
+<li class="table-view-divider">Efeitos</li>
+  <div class="segmented-control">
+  <a class="control-item" href="#item1mobile">
+    <img src="HTML_img/1.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+  <a class="control-item" href="#item2mobile">
+    <img src="HTML_img/2.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+  <a class="control-item" href="#item3mobile">
+    <img src="HTML_img/3.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+  <a class="control-item" href="#item4mobile">
+    <img src="HTML_img/4.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+    <a class="control-item" href="#item5mobile">
+    <img src="HTML_img/5.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+  <a class="control-item" href="#item1mobile">
+    <img src="HTML_img/6.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+  <a class="control-item" href="#item2mobile">
+    <img src="HTML_img/7.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+  <a class="control-item" href="#item3mobile">
+    <img src="HTML_img/8.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+  <a class="control-item" href="#item4mobile">
+    <img src="HTML_img/9.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+    <a class="control-item" href="#item5mobile">
+    <img src="HTML_img/10.jpg" alt="def.jpg" style="width:30px;height:20px;">
+  </a>
+</div>	
+	<!-- Gerador de memes -->
+	<a href="#myModalexample" class="btn btn-primary btn-block">MEMES</span></a></li>
+<div id="myModalexample" class="modal">
+  <header class="bar bar-nav">
+    <a class="icon icon-close pull-right" href="#myModalexample"></a>
+    <h1 class="title">MEMES</h1>
+  </header>
+
+  <div class="content">
+    <p class="content-padded">
+	<form>
+  <input type="text" placeholder="FRASE 1">
+  <input type="text" placeholder="FRASE 2">
+<li class="table-view-divider">Cores de fundo de texto</li>
+<div class="segmented-control">
+  <a class="control-item active" href="#item0mobile">
+   <img src="HTML_img/deny.png" alt="def.jpg" style="width:20px;height:20px;">
+  </a>
+  <a class="control-item" href="#GR">
+    <img src="HTML_img/verde.png" alt="def.jpg" style="width:20px;height:20px;">
+  </a>
+  <a class="control-item" href="#OR">
+    <img src="HTML_img/laranja.jpg" alt="def.jpg" style="width:20px;height:20px;">
+  </a>
+  <a class="control-item" href="#Y">
+    <img src="HTML_img/amarelo.jpg" alt="def.jpg" style="width:20px;height:20px;">
+  </a>
+  <a class="control-item" href="#BL">
+    <img src="HTML_img/azul.jpg" alt="def.jpg" style="width:20px;height:20px;">
+  </a>
+    <a class="control-item" href="#GRY">
+    <img src="HTML_img/cinza.jpg" alt="def.jpg" style="width:20px;height:20px;">
+  </a>
+	<a class="control-item" href="#R">
+    <img src="HTML_img/bordo.jpg" alt="def.jpg" style="width:20px;height:20px;">
+  </a>
+</div>
+
+<li class="table-view-divider">Outros efeitos de texto</li>
+<li class="table-view-cell">
+Texto sombreado
+<div class="toggle">
+  <div class="toggle-handle"></div>
+</div>
+</li>
+  <button class="btn btn-positive btn-block">Apply & Send</button>
+</form>
+
+	</p>
+  </div>
+<!-- fim de gerador -->
+
+</div>
+<button class="btn btn-positive btn-block">UPLOAD</button>
+<!-- Canvas -->
+<input type="file" accept="image/*" onchange="updatePhoto(event);"></input>
+<canvas id="photo" width="350" height="200"></canvas>
+
+<script>
+function sendFile(file) {
+	
+	var data = new FormData();
+	data.append("myFile", file);
+	data.append("category" , "photo");
+	data.append("arg1" , "");
+	data.append("arg2" , "");
+	data.append("location" , "");
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "/api/put");
+	xhr.upload.addEventListener("progress", updateProgress, false);
+	xhr.send(data);
+	
+	}
+	
+function updateProgress(evt){
+	
+	if(evt.loaded == evt.total)
+	alert("Imagem Carregada com Sucesso :)");
+	}
+            
+function updatePhoto(event){
+	
+	var reader = new FileReader(); 
+	reader.onload = function(event){
+		//Criar uma imagem
+		var img = new Image(); 
+		img.onload = function(){
+			//Colocar a imagem no ecrã
+			canvas = document.getElementById("photo");
+			ctx = canvas.getContext("2d");
+			ctx.drawImage(img,0,0,img.width,img.height,0,0,530, 400);
+			}
+		img.src = event.target.result;
+	}
+	//Obter o ficheiro
+	var picURL = reader.readAsDataURL(event.target.files[0]);
+	
+	sendFile(event.target.files[0]);
+	
+            }
+</script>
+        
+
+
+
+<script type="text/javascript">
+    jQuery.noConflict();    
+    formdata = new FormData();      
+    jQuery("#image_to_upload").on("change", function() {
+        var file = this.files[0];
+        if (formdata) {
+            formdata.append("image", file);
+            jQuery.ajax({
+                url: "destination_ajax_file.php",
+                type: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+                success:function(){}
+            });
+        }                       
+    }); 
+	
+
+</script>
+</form>
+
+
+
+</ul>
+</div>
+</body>
+</html>

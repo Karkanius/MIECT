@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>profile</title>
+<meta name="viewport"
+content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/ratchet.css">
+<link rel="stylesheet" href="css/ratchet-theme-android.css">
+<link rel="stylesheet" href="css/app.css">
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/ratchet.js"></script>
+</head>
+<body>
+<link rel="stylesheet" href="css/ratchet-theme-android.css"><!--Esta aqui para atualizar Inlock-->
+<header class="bar bar-nav">
+<style>.select-wrapper4 {
+        background: url(FOTOS/cm.png) no-repeat;
+        background-size: cover;
+        display: block;
+        position: absolute;
+        top:-5%;
+        left:5%;
+        width: 45px;
+        height: 45px;
+      }
+
+      .image_src {
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }</style>
+	<a class="tab-item" href="#">
+        <div class="btn-group" data-toggle="buttons">
+          <div class="container">
+            <span class="select-wrapper4"><input id="files2"class="image_src" type="file" accept="image/*" onchange="readURL(this);" name="image_src" /></span>
+			
+          </div>
+        </div>
+      </a>
+    <h1 class="title" >Profile</h1>
+
+</header>
+
+<nav class="bar bar-tab">
+  <a class="tab-item" href="home.html" data-transition="slide-in">
+    <span class="icon icon-home"></span>
+    <span class="tab-label">Home</span>
+  </a>
+   <a class="tab-item">
+    <span class="icon icon-search"></span>
+    <span class="tab-label">Search</span>
+  </a>
+
+    <a class="tab-item" href="editor.html" data-transition="slide-in">
+        <span class="icon icon-share" ></span>
+    <span class="tab-label">Upload</span>
+  </a>
+
+    <a class="tab-item active">
+
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Profile</span>
+
+  </a>
+
+    <a class="tab-item" href="settings.html" data-transition="slide-in">
+    <span class="icon icon-gear"></span>
+    <span class="tab-label">Settings</span>
+  </a>
+</nav>
+
+
+
+
+
+<div class="content">
+<ul class="table-view">
+  <li class="table-view-cell media">
+    <a class="navigate-right">
+      <img class="media-object pull-left" src="FOTOS/fts%20(1).jpg" alt="No Image" style="width:100px;height:100px;">
+      <div class="media-body">
+        Nome do Utilizador
+        <p>Descrição da pessoa linda que esta na foto.</p>
+      </div>
+    </a>
+  </li>
+<li class="table-view-divider">Fotos Recentes</li>
+
+     <li class="table-view-cell media">
+    <table>
+       <tr><td> <img class="media-object pull-left" src="FOTOS/fts%20(1).jpg" alt="def.jpg" style="width:100px;height:100px;"></td> <td>  <img class="media-object pull-left" src="FOTOS/fts%20(2).jpg" alt="def.jpg" style="width:100px;height:100px;"> </td> <td>  <img class="media-object pull-left" src="FOTOS/fts%20(3).jpg" alt="def.jpg" style="width:100px;height:100px;"> </td> </tr>
+
+       <tr><td> <img class="media-object pull-left" src="FOTOS/fts%20(4).jpg" alt="def.jpg" style="width:100px;height:100px;"></td> <td>  <img class="media-object pull-left" src="FOTOS/fts%20(5).jpg" alt="def.jpg" style="width:100px;height:100px;"> </td> <td>  <img class="media-object pull-left" src="FOTOS/fts%20(6).jpg" alt="def.jpg" style="width:100px;height:100px;"> </td> </tr>
+
+       <tr><td> <img class="media-object pull-left" src="FOTOS/fts%20(7).jpg" alt="def.jpg" style="width:100px;height:100px;"></td> <td>  <img class="media-object pull-left" src="FOTOS/fts%20(8).jpg" alt="def.jpg" style="width:100px;height:100px;"> </td> <td>  <img class="media-object pull-left" src="FOTOS/def.jpg" alt="def.jpg" style="width:100px;height:100px;"> </td> </tr>
+
+    </table>
+     </li>
+
+
+</ul>
+</div>
+<script>
+    document.getElementById("files2").onchange = function () {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("gallery").src = e.target.result;
+         };
+        reader.readAsDataURL(this.files[0]);
+     };
+  </script>
+</body>
+</html>

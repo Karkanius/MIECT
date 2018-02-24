@@ -1,0 +1,292 @@
+[33mcommit adb0a700a05d420627bbd2f69a18225b37f1fb82[m
+Author:  <paulobvasconcelos@ua.pt>
+Date:   Fri Jun 9 20:13:19 2017 +0100
+
+    Melhorias na database (em conjunto com o Jorge) e desenvolvimento do Server.
+
+[33mcommit 7ea2df0fda86d50b8a0a17cf252b700f622efbd9[m
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Fri Jun 9 16:07:33 2017 +0100
+
+    Olá kridus.
+
+[33mcommit 2ce416f266c5824a0d80947c090848e90969a17a[m
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Fri Jun 9 14:29:52 2017 +0100
+
+    Só por segurança
+
+[33mcommit 656af0f2fad9fe7afb2ab002d6649c7301e0a2ca[m
+Author: jpcatarino <jorge.catarino@ua.pt>
+Date:   Fri Jun 9 02:32:17 2017 +0100
+
+    Adicionado mais um bocado de relatório
+
+[33mcommit 3069ff1c315c824cf29a83a9d850c6640d1879e4[m
+Merge: f9e629c 5d66d0f
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Thu Jun 8 18:36:21 2017 +0100
+
+    mergando pela seunda vez hoje
+
+[33mcommit f9e629cf82f8fda524ea70f2e41707bacc73a262[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Thu Jun 8 18:32:50 2017 +0100
+
+    Compatibilidade com xcoa
+
+[33mcommit 5d66d0f55bf7c0dd4d29db20eaba9558e6560839[m
+Author:  <paulobvasconcelos@ua.pt>
+Date:   Thu Jun 8 18:10:52 2017 +0100
+
+    Não liguem a isto
+
+[33mcommit 481adc9d6e3be3dc800c45a0f8ad1ff95f877749[m
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Thu Jun 8 17:02:27 2017 +0100
+
+    Diretório de imagens para HTML
+
+[33mcommit 5810ab3d1aee82ce4c036beb9d9664f7b17f0af2[m
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Thu Jun 8 16:58:18 2017 +0100
+
+    Pequeno erro de identação corrigido no API
+
+[33mcommit f87b441e7217f4c17b3ecd5ce1c93b62654e678e[m
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Thu Jun 8 12:29:47 2017 +0100
+
+    Alteração em API.py
+
+[33mcommit 20670169b17449def9e69da6f887c978b78e21ae[m
+Merge: 6484139 a2fa259
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Thu Jun 8 11:39:44 2017 +0100
+
+    Merge branch 'master' of https://code.ua.pt/git/labi1617-p2-g3
+
+[33mcommit 6484139d93b8cded128681d1afce0cbc440c6a88[m
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Thu Jun 8 11:38:56 2017 +0100
+
+    Whatever
+
+[33mcommit a2fa2599a7f87c4324f00c086af827962295d154[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Thu Jun 8 11:07:29 2017 +0100
+
+     Ja troca mas tem ainda um bug resolvo daqui nada
+
+[33mcommit 9f7af9ad401c0bed981c897b5e6e06d4a36cbf17[m
+Author: jpcatarino <jorge.catarino@ua.pt>
+Date:   Thu Jun 8 02:22:21 2017 +0100
+
+    Escrita pequena aprte do relatório, referente a base de dados
+
+[33mcommit fdd839e415d324cb7c5cf4caa7bf02810816f909[m
+Merge: 81fdd28 5af8be4
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Wed Jun 7 18:20:59 2017 +0100
+
+    merge rapazola
+
+[33mcommit 81fdd28c82aec2e9dab5b2cf4174e357a5328c50[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Wed Jun 7 18:18:17 2017 +0100
+
+    alterações na pasta projeto, no html
+
+[33mcommit 5af8be4476bd87aee8d8faeb4411826be76af491[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Wed Jun 7 15:26:34 2017 +0100
+
+    correções na db
+
+[33mcommit 7f2db2512851fff7ed01c5936afa7f95051635b7[m
+Author: HELLO BITCHESSSSS <paulobvasconcelos@ua.pt>
+Date:   Tue Jun 6 18:08:38 2017 +0100
+
+    Ligeira alteração
+
+[33mcommit b588465e88eae8277302c50d36af4439099c5082[m
+Merge: 26a263d 952cfd5
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Tue Jun 6 17:44:18 2017 +0100
+
+    Merge branch 'master' of https://code.ua.pt/git/labi1617-p2-g3
+
+[33mcommit 26a263dc0a9621c2a61ea4690199db59dbe46bdb[m
+Author:  <paulobvasconcelos@ua.pt>
+Date:   Tue Jun 6 17:41:10 2017 +0100
+
+    Pasta para insersão de doc finais.
+
+[33mcommit 952cfd5bf3413fe9b5e731738740660a9fa83467[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Tue Jun 6 17:00:17 2017 +0100
+
+     funções de validação db
+
+[33mcommit 3aaae14e35d829a7b66d29fe51678d81d9cac5f9[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Tue Jun 6 15:59:43 2017 +0100
+
+    Pasta de armazenamento
+
+[33mcommit 0adc01b6dd1eba531a79a74ce8806158e9bd5358[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Tue Jun 6 14:17:15 2017 +0100
+
+    editor is in the house
+
+[33mcommit 069e1374c8beaa1a8bc8c3202a98663aeac416eb[m
+Author: Paulo Vasconcelos <Paulo Vasconcelos>
+Date:   Tue Jun 6 04:50:07 2017 +0100
+
+    Servidor com funções instanciadas e algumas concluídas ou perto disso.
+
+[33mcommit 09070d50e2c950a4f64ba5f0fabda4290294759b[m
+Merge: cc87f61 648a9b7
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Tue Jun 6 00:27:09 2017 +0100
+
+    Merge branch 'master' of https://code.ua.pt/git/labi1617-p2-g3
+    
+    o git e os seus habituais merges
+
+[33mcommit cc87f61ba60f35375591ccc804e2e0165d8df594[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Tue Jun 6 00:27:02 2017 +0100
+
+    Adicionada função que devolve lista das filas da tabela
+
+[33mcommit 648a9b76d07e7afead17c020370c4c50c03d8360[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon Jun 5 23:55:25 2017 +0100
+
+    editor
+
+[33mcommit e2a0609fa49b90245a5e7348451d0857bb192e1b[m
+Merge: 092460b c23226e
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon Jun 5 23:35:57 2017 +0100
+
+    Merge branch 'master' of https://code.ua.pt/git/labi1617-p2-g3
+
+[33mcommit c23226eed7a54c24dc51dd733ed7974c9f657076[m
+Author: raquel <raquel.a.rainho@ua.pt>
+Date:   Mon Jun 5 22:47:30 2017 +0100
+
+    criação de alguns efeitos - ainda tem pouco código
+
+[33mcommit 092460b831a2070d12142530a1098592720798b7[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon Jun 5 16:30:53 2017 +0100
+
+    editor em bones
+
+[33mcommit c5f1320e547213cb48244841aa5e2936849056d1[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Mon Jun 5 16:09:04 2017 +0100
+
+    Eliminada pasta extra, aprimorado pequeno exemplo de cherry
+
+[33mcommit 09e9c224ef0b54d90728d02f072a6bbd42a0d7fd[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Mon Jun 5 15:35:28 2017 +0100
+
+    Tentativa de cherrypy na pasta html, modificações na db
+
+[33mcommit 0288601de07d9cb1149020d485bfb0ef158d841a[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon Jun 5 15:32:23 2017 +0100
+
+    merge nesta m****
+
+[33mcommit 2178fbf30802a7ceefdb750bd6f693a5403e4f80[m
+Merge: d35df31 06f6b31
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon Jun 5 15:31:06 2017 +0100
+
+    MARTELO NESTA CENA
+
+[33mcommit d35df31a7e209547e5d826ae0648f4bed6252ccc[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon Jun 5 15:20:09 2017 +0100
+
+    Jquerry
+
+[33mcommit 06f6b31da3846e40816a056c8a2e75281605071d[m
+Merge: cdef20c 1beafc2
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Thu Jun 1 18:53:48 2017 +0100
+
+    Adicionada nova tabela, com filepath
+
+[33mcommit cdef20c83a952b79f10a8e334939d2170a0b16e4[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Thu Jun 1 18:51:14 2017 +0100
+
+    Adicionada uma nova tabela, com filepath
+
+[33mcommit 1beafc20fe4ff4e5b655aba3838933971846a533[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Thu Jun 1 17:10:01 2017 +0100
+
+    bug fix
+
+[33mcommit 6d49d7dab741114742406ef7137c845d969d0008[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Tue May 30 17:54:35 2017 +0100
+
+    easter egg nos settings
+
+[33mcommit ac35057d2aa059391b17cce294dc4a6badef2612[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Tue May 30 17:35:31 2017 +0100
+
+    alterações no settings por implmentar na versão branca
+
+[33mcommit 3465b8af5598cf389e206c229c3a18a5aaa17b27[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon May 29 13:59:35 2017 +0100
+
+    BUG FIX 1
+
+[33mcommit 7f779df6eb6f9eb25b891a5c0dea7812cbf94267[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon May 29 13:38:22 2017 +0100
+
+    Jquerry add alteração de diretorio
+
+[33mcommit e42d227b9364d8aef8afa815bdf30d17d9fdd3bf[m
+Author: Francisco Martinho <martinho.francisco@ua.pt>
+Date:   Mon May 29 12:57:19 2017 +0100
+
+    HTML ADD
+
+[33mcommit cfb75e6a204646f59539076b75ea1a0fd3379be0[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Sun May 28 01:28:28 2017 +0100
+
+    Adicionadas duas funçoes que podem vir a ser necessárias
+
+[33mcommit 81984b5ecd4f59365dd451b0c44d96e133ad32a9[m
+Merge: 07db0da d18b380
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Wed May 24 18:03:20 2017 +0100
+
+    Merge branch 'master' of https://code.ua.pt/git/labi1617-p2-g3
+
+[33mcommit 07db0dab56d156d5d75afd0fa609af97c5726851[m
+Author: Jorge Catarino <Jorge Catarino>
+Date:   Wed May 24 18:00:57 2017 +0100
+
+    Modulo da db iniciado, funcoes de adicionar uma fila, por e tirar votos adicionadas, mas longe de estar bem finalizadas
+
+[33mcommit d18b380d664450797128dcea47e73c66cc1a40db[m
+Author: raquel <raquel.a.rainho@ua.pt>
+Date:   Wed May 24 10:50:02 2017 +0100
+
+    Adicionado template do relatório com algumas modificações
