@@ -24,8 +24,6 @@ public class Menu {
 	 * CONSTRUCTORS
 	 */
 	
-	public Menu() {	}
-	
 	public Menu(List<String> list) { this.options.addAll(list); }
 	
 	public Menu(String title, List<String> list) { this.title = title; this.options.addAll(list); }
