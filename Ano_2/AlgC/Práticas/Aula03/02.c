@@ -8,27 +8,28 @@ paulobvasconcelos@gmail.comp
 # define nElem(x) (sizeof(x)/sizeof((x)[0]))
 
 int main(void) {
-  int array [] = {1,4,5,4,3,7,6,10,10,1};
+//  int array [] = {1,4,5,4,3,7,6,10,10,1};
 //  int array [] = {9,8,7,6,5,4,3,2,1,0};
+  int array [] = {1,10,8,1,9,1,1,1,1,7};
   int nComp = 0;
   int nMenores = 0;
   int index = nElem(array)-1;
 
   for (int i=nElem(array)-1; i>=nMenores; i--) {
     nComp++;
-    if ((array[i]>array[index]) || (array[i]==array[index] && i==index-1)) {
+    if ((array[i]>array[index]) || (array[i]==array[index] && i==index-1) || (i==nElem(array)-1)) {
       nComp++;
       if (array[i]==array[index] && i==index-1) index = i;
       else {
         int nMenoresTemp = 0;
         for (int j = i-1; j >= 0 && j + 1 + nMenoresTemp >= nMenores; j--) {
           nComp++;
-	  if (array[j]<array[i]) nMenoresTemp++;
+          if (array[j]<array[i]) nMenoresTemp++;
         }
         nComp++;
         if (nMenoresTemp>=nMenores) {
-	  index = i;
-	  nMenores = nMenoresTemp;
+	        index = i;
+	        nMenores = nMenoresTemp;
         }
       }
     }
