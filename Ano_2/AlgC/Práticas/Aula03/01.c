@@ -1,3 +1,9 @@
+/*
+Paulo Vasconcelos
+paulobvasconcelos@gmail.comp
+2018 march
+*/
+
 # include <stdio.h>
 # define nElems(x) (sizeof(x)/sizeof((x)[0]))
 
