@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$ANTLR4_PATH" ]; then
+   java -ea org.antlr.v4.Tool $*
+else
+   java -ea -cp .:`ls --color=never $ANTLR4_PATH/antlr-4*-complete.jar | tail -1` org.antlr.v4.Tool $*
+fi
+
+exit $?

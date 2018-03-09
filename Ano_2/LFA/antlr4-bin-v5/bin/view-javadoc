@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# change the following variables to point to browser and javadoc directories!
+
+BROWSER="/usr/bin/firefox"
+JDKDIR1="/usr/share/doc/openjdk-6-jre-headless"
+JDKDIR2="/usr/local/share/java/docs"
+#JDKDIR2=""
+OTHERDIR="/usr/local/doc"
+#OTHERDIR=""
+
+if [ $# -eq 0 ]; then
+  echo "Usage: view-javadoc <CLASS-NAME>"
+  exit 1;
+fi
+
+declare -a docs;
+docs=( $( find $OTHERDIR $JDKDIR1 $JDKDIR2 ! -path \*/class-use/\* -name "$1".html ) )
+
+# ALTERNATIVE A: Open all found (if > 1)
+if [ ${#docs[@]} -eq 0 ]; then
+  echo "Class not found!"
+  exit 2
+fi
+
+"$BROWSER" ${docs[@]} &
+
+exit 0
+
+# ALTERNATIVE B: Let user select which one (if > 1)
+case ${#docs[@]} in
+0)
+  echo "Class not found!"
+  exit 2
+  ;;
+1)
+  doc=${docs[0]}
+  "$BROWSER" $doc &
+  ;;
+*)
+  select doc in ${docs[@]}; do
+    break;
+  done
+  if [ -z "$doc" ]; then
+    exit 0;
+  fi
+  ;;
+esac
+"$BROWSER" $doc &
+
+exit 0

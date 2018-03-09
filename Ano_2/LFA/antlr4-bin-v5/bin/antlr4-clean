@@ -1,0 +1,20 @@
+#!/bin/bash
+
+IFS=$'\n'
+
+# clean .class files:
+echo "Removing class files:"
+find . -name \*.class -printf "removing %p\n" -exec rm -f {} \;
+
+# clean antlr4 generated .java files:
+for g in `find . -name \*.g4`; do
+   if [[ -e $g && -f $g ]]; then
+      echo "Removing $g files:"
+      name=${g%.g4}
+      rm -fv $name.tokens $name.interp ${name}Lexer.interp ${name}BaseListener.java ${name}Listener.java ${name}BaseVisitor.java ${name}Visitor.java ${name}Lexer.tokens ${name}Lexer.java ${name}Parser.java
+      if [[ "$name" = *Parser || "$name" = *Lexer ]]; then
+         rm -fv $name.java
+      fi
+   fi
+done
+

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+IFS=$'\n'
+
+count=`find . -name \*Main.class | wc -l`
+
+if ((count == 0)); then
+   echo "Main file not found!"
+   exit 1
+elif ((count > 1)); then
+   echo "Too many main files!"
+   find . -name \*Main.java -printf "   %p\n"
+   exit 1
+fi
+
+main=`find . -name \*Main.class | sed 's/.class//g' | sed 's/^.\///1'`
+cat $* | java -ea $main
+

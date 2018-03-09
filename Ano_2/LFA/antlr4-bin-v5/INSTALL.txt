@@ -1,0 +1,56 @@
+Section 1: ANTLR4 installation
+
+STEP 1: Install ANTLR4
+
+
+a) Alternative 1 (preferable):
+
+- as root (sudo) create directory /usr/java/packages/lib/ext
+
+sudo mkdir --parents /usr/java/packages/lib/ext
+
+- cp jar file:
+
+sudo cp antlr-4.7.1-complete.jar /usr/java/packages/lib/ext/
+
+
+b) Alternative 2:
+
+- copy antlr-4.7.1-complete.jar to directory: /usr/local/lib/
+
+sudo cp antlr-4.7.1-complete.jar /usr/local/lib/
+
+- edit /etc/bash.bashrc (or /etc/bashrc, or ~/.bashrc) and add the following commands at the end of the file:
+
+export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
+export ANTLR4_PATH="/usr/local/lib"
+
+(Alternative 2 assumes bash shell. Look at documentation for other shells.)
+
+
+STEP 2: Copy scripts to directory: /usr/local/bin/
+
+sudo cp bin/antlr4* bin/java-clean /usr/local/bin/
+
+
+
+Section 2: Java documentation
+
+
+STEP 1: Install ANTLR4 documentation
+
+sudo mkdir --parents /usr/local/doc/javadoc
+(cd /usr/local/doc/; sudo unzip antlr4-4.7.1-javadoc.zip)
+
+
+STEP 2: Install Java documentation
+
+Try:
+
+sudo apt-get install openjdk-7-doc
+
+
+STEP 3: Copy script to directory: /usr/local/bin/
+
+sudo cp bin/view-javadoc /usr/local/bin/
+

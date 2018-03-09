@@ -1,0 +1,16 @@
+#!/bin/bash
+
+IFS=$'\n'
+
+opt=""
+case $1 in
+   "-v" | "-visitor")
+      opt="-visitor"
+      ;;
+esac
+
+for g in `find . -name \*.g4 | sort`; do # sort to put Lexer grammar before Parser grammar (if any)
+   echo "Processing $g"
+   (cd `dirname $g`; antlr4 $opt `basename $g`) && javac ./`dirname $g`/*.java
+done
+

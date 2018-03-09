@@ -1,0 +1,59 @@
+#!/bin/bash
+
+if [ -z "$ANTLR4_PATH" ]; then
+   cp=""
+else
+   cp="-cp .:`ls --color=never $ANTLR4_PATH/antlr-4*-complete.jar | tail -1`"
+fi
+
+if [ $# -eq 1 ]; then
+   if [[ "$1" =~ "-h" ]]; then
+      java -ea $cp org.antlr.v4.gui.TestRig
+      exit 1
+   fi
+fi
+
+if [ $# -eq 0 ] || [ $# -eq 1 ] && [[ "$1" =~ "-"* ]]; then
+   if (command -v cpp >/dev/null 2>&1); then
+
+      count=`find . -name \*.g4 | wc -l`
+      if ((count == 0)); then
+         echo "Grammar file not found!"
+         exit 1
+      elif ((count > 1)); then
+         echo "Too many grammar files!"
+         find . -name \*.g4 -printf "   %p\n"
+         exit 1
+      fi
+      g4=`find . -name \*.g4`
+      p=`dirname $g4 | sed 's/^\.\///1'`
+      if [[ "$p" == "." ]]; then
+        p=""
+      else
+        p=$p.
+      fi
+
+      grammar=`cat "$g4" | sed 's/{/{\n/g' | sed 's/}/}\n/g' | gawk 'BEGIN {c=0;s=0;} /{/ {c++;} /}/ {c--;s=1;} {if (c == 0 && s==0) printf $0"\n";else s=0;}' | cpp 2> /dev/null | grep -v ^# | grep -Ev "^\<import\>" | tr '\r' ' ' | tr ' ' '\n' | tr ';' ' ' | tr ':' ' ' | grep -v '^$' | head -2 | tail -1`
+      rule=`cat "$g4" | sed 's/{/{\n/g' | sed 's/}/}\n/g' | gawk 'BEGIN {c=0;s=0;} /{/ {c++;} /}/ {c--;s=1;} {if (c == 0 && s==0) printf $0"\n";else s=0;}' | cpp 2> /dev/null | grep -v ^# | grep -Ev "^\<import\>" | tr '\r' ' ' | tr ' ' '\n' | tr ';' ' ' | tr ':' ' ' | grep -v '^$' | head -3 | tail -1`
+      if [ $# -eq 0 ]; then
+         java -ea $cp org.antlr.v4.gui.TestRig $p$grammar $rule
+      else
+         opt=$1
+         case $1 in
+            "-t" )
+               opt="-tokens"
+               ;;
+            "-g" )
+               opt="-gui"
+               ;;
+         esac
+         java -ea $cp org.antlr.v4.gui.TestRig $p$grammar $rule $opt
+      fi
+   else
+      java -ea $cp org.antlr.v4.gui.TestRig $*
+   fi
+else
+   java -ea $cp org.antlr.v4.gui.TestRig $*
+fi 
+
+exit $?
