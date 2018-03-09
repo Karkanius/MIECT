@@ -1,0 +1,216 @@
+#!/bin/bash
+
+# v3.0
+# Exit codes:
+#    0 -> Run sucessfully
+#    1 -> Run sucessfully (showed help or first usage help)
+#    2 -> Error : at least 1 given file does not exist
+
+# Changelog v3.0:
+#   Added file verification
+#   Added -w, -rw options
+#   Small fixes on help
+#   Added support to multiple files
+
+clear
+echo "Pedro Teixeira 03 Mar 2018 v3.0 Paulo's Version"
+
+# -----------------------------------------------------
+# First Usage help
+# ATTENTION: please don't copy the export PATH... command
+# from the source code, it will damage your system.
+# Please use export PATH=$PATH:[path to the script]
+# instead of export PATH=\$PATH:[path to the script]
+# If you copy the command from the console, after
+# running the script, ignore this warning.
+
+if [ "$1" == "-first-use" ]; then
+  echo "First Usage Help"
+  echo "----------------------------"
+  echo "If it's the first time you use the script, follow these steps:
+  (0. Install DETPIC32 Tools, if they are not already installed.)
+
+  1. Connect DETPIC32 to the computer.
+
+  2. Open Windows Device Manager. Under Ports (COM & LPT), there
+  will be a device named USB Serial Port (COM[number]). That
+  number will be needed for the next step.
+
+  3. Edit the file /root/.profile (for example, using the command
+  sudo vi /root/.profile) and add the following lines of code to
+  the beginning of the file:
+
+    sudo chmod 666 /dev/ttyS[number]
+    stty -F /dev/ttyS[number] -a > ~/.runPIC32.log
+    stty -F /dev/ttyS[number] sane 9600
+    export PIC32PORT='[number]'
+
+  where [number] is the number from the previous step.
+
+  4. Edit the file ~/.bashrc (for example, using the command
+  vi ~/.bashrc) and add the following line of code:
+
+    export PATH=\$PATH:[path to the script]
+
+  On Bash for Windows, if the script is for example on the folder
+  C:\Users\Username\Downloads, the corresponding command will be
+    export PATH=\$PATH:/mnt/c/Users/Username/Downloads
+
+  5. To run the script, you must use the Bash with administrative rights:
+    sudo -s
+    runPIC32 <file> or runPIC32 -l <file> [Linux only]
+
+  Without using sudo -s before running the script for the first time
+  in the current session, the script won't work."
+  exit 1;
+fi
+
+# -----------------------------------------------------
+# Run on Linux
+if  [ "$1" == "-l" ]; then
+  # tests if files exist
+  for arg in "$@"
+  do
+    if [ ! -e "$arg" ]; then
+      echo "File" "$arg" "does not exist. Please check if the file exits."
+      exit 2;
+    fi
+  done
+
+  sudo killall -q -w ldpic32  # solves /dev/ttyS# is already being used
+  sudo killall -q -w pterm
+
+  source /root/.profile
+  echo "Running program located at: " $2
+  echo "Auxiliary files: " ${@:3}
+  echo ""
+
+  pcompile ${@:2} && ldpic32 ${12.*}.hex
+  pterm
+  exit 0;
+
+fi
+
+# -----------------------------------------------------
+# Run but not compile on Windows
+if  [ "$1" == "-r" ]; then
+  if [ ! -e "$2" ]; then
+    echo "File" "$2" "does not exist. Please check if the file exits."
+    exit 2;
+  fi
+
+  sudo killall -q -w ldpic32  # solves /dev/ttyS# is already being used
+  sudo killall -q -w pterm
+
+  source /root/.profile
+  echo "Running program located at" $2
+  echo ""
+  ldpic32 $2 -p /dev/ttyS$PIC32PORT
+  pterm -p /dev/ttyS$PIC32PORT
+  exit 0;
+fi
+
+# -----------------------------------------------------
+# Run but not compile on Windows without pterm
+if  [ "$1" == "-rw" ]; then
+  # tests if files exist
+  for arg in "${@:2}"
+  do
+    if [ ! -e "$arg" ]; then
+      echo "File" "$arg" "does not exist. Please check if the file exits."
+      exit 2;
+    fi
+  done
+
+  sudo killall -q -w ldpic32  # solves /dev/ttyS# is already being used
+  sudo killall -q -w pterm
+
+  source /root/.profile
+  echo "Running program located at: " $2
+  echo "Auxiliary files: " ${@:3}
+  echo ""
+
+  ldpic32 ${2%.*}.hex -p /dev/ttyS$PIC32PORT
+  echo "
+Done!"
+  exit 0;
+fi
+
+# -----------------------------------------------------
+# Run on Windows without pterm
+if  [ "$1" == "-w" ]; then
+  # tests if files exist
+  for arg in "${@:2}"
+  do
+    if [ ! -e "$arg" ]; then
+      echo "File" "$arg" "does not exist. Please check if the file exits."
+      exit 2;
+    fi
+  done
+
+  sudo killall -q -w ldpic32  # solves /dev/ttyS# is already being used
+  sudo killall -q -w pterm
+
+  source /root/.profile
+  echo "Running program located at: " $2
+  echo "Auxiliary files: " ${@:3}
+  echo ""
+
+  pcompile ${@:2} && ldpic32 ${2%.*}.hex -p /dev/ttyS$PIC32PORT
+  echo "
+Done!"
+  exit 0;
+fi
+# -----------------------------------------------------
+# Run on Windows (default behavior)
+if [ "$#" -ne 0 ] && [ "$1" != "-h" ]; then
+  # tests if files exist
+  for arg in "$@"
+  do
+    if [ ! -e "$arg" ]; then
+      echo "File" "$arg" "does not exist. Please check if the file exits."
+      exit 2;
+    fi
+  done
+
+  sudo killall -q -w ldpic32  # solves /dev/ttyS# is already being used
+  sudo killall -q -w pterm
+
+  source /root/.profile
+  echo "Running program located at: " $1
+  echo "Auxiliary files: " ${@:2}
+  echo ""
+
+  pcompile $@ && ldpic32 ${1%.*}.hex -p /dev/ttyS$PIC32PORT
+  pterm -p /dev/ttyS$PIC32PORT
+  exit 0;
+
+# -----------------------------------------------------
+# Show Help
+else
+  echo "
+Usage: runPIC32 [option] <main .s or .c file/.hex file> [auxiliar files]
+
+Available options:
+runPIC32     <files> : Runs PIC32 program (.c/.s) located at the given path
+runPIC32     <files> : Runs PIC32 program (.c/.s) located at the given path
+runPIC32 -l  <files> : Runs PIC32 program (.c/.s) located at the given path (for Linux)
+runPIC32 -w  <files> : Runs PIC32 program (.c/.s) located at the given path without opening pterm
+runPIC32 -r  <file>  : Runs PIC32 program (.hex)  located at the given path
+runPIC32 -rw <file>  : Runs PIC32 program (.hex)  located at the given path without opening pterm
+runPIC32 -h          : Shows help
+runPIC32 -first-use  : Shows instructions if it's the first run of the script
+
+Important Notes:
+-> The path to the file must include the .s or .c extension.
+-> Auxiliar files needed for compilation can be provided as arguments.
+   The first file is the one which will be run on DETPIC32.
+-> All options, excepting -l, only work on Bash on Windows.
+-> If needed, pcompile, ldpic32 and pterm can be run separately.
+   To use these commands on Bash on Windows:
+   pcompile : The usage of pcompile on Bash on Windows is similar to the Linux's usage.
+   ldpic32  : ldpic32 <path to hex file> -p /dev/ttyS[port number]
+   pterm    : pterm -p /dev/ttyS[port number]
+"
+  exit 1;
+fi

@@ -20,7 +20,18 @@
         .data
 
         .text
-        .globl main
+        .globl delay
 
-main:   lui $t1, SFR_BASE_HI
-        jr $ra
+delay:
+
+for:    ble	$a0,0,endfor
+        li	$v0,RESET_CORE_TIMER
+        syscall
+
+whild:  li	$v0,READ_CORE_TIMER
+        syscall
+        blt	$v0,20000,whild
+        addi	$a0,$a0,-1
+        j for
+
+endfor: jr	$ra

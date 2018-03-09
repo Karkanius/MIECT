@@ -1,0 +1,4 @@
+sudo chmod 666 /dev/ttyS4
+stty -F /dev/ttyS4 -a
+stty -F /dev/ttyS4 sane 9600
+export PATH=$PATH:/mnt/c/Users/Paulo\ Vasconcelos/Desktop/MIECT/Ano_2/AC2/Práticas/
