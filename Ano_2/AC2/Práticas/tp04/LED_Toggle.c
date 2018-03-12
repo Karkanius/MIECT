@@ -1,12 +1,6 @@
-/*
-* Paulo Vasconcelos
-* paulobvasconcelos@gmail.com
-* 2018 march
-*/
-
 #include <detpic32.h>
 
-#include "../helpFuncPackage/delay.h"
+#include "../helpFuncPackage/delay.c"
 
 int main(void) {
 

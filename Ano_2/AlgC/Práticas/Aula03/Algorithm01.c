@@ -5,15 +5,16 @@ paulobvasconcelos@gmail.comp
 */
 
 # include <stdio.h>
-# define nElems(x) (sizeof(x)/sizeof((x)[0]))
+# define nElem(x) (sizeof(x)/sizeof((x)[0]))
 
-int main(void) {
-	int array [] = {4,5,3,3,3,3,3,3,3,3};
+int numberOfEquals(int* array, int arraySize) {
+
 	int contador = 0;
 
-	for(int i=1; i<nElems(array); i++) {
+	for(int i=1; i<arraySize; i++) {
 		if (array[i]==array[i-1]) contador++;
 	}
-	printf("%d\n", contador);
-	return 0;
+	printf("Resultado: %d\n", contador);
+	printf("Nº de operações: %d\n\n", arraySize-1);
+	return contador;
 }

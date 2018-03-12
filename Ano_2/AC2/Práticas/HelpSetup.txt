@@ -1,0 +1,9 @@
+---SETUP---
+sudo chmod 666 /dev/ttyS4
+stty -F /dev/ttyS4 -a
+stty -F /dev/ttyS4 sane 9600
+
+---INIT---
+pcompile __FILE_NAME_.s__ OU pcompile __FILE_NAME_.c__
+ldpic32 -w __FILE_NAME_.hex__ -p /dev/ttyS4
+pterm -p /dev/ttyS4
