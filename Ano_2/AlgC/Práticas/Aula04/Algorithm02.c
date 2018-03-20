@@ -20,7 +20,7 @@ void removeRepeated(int* array, int arraySize) {
         nCop++;
         arraycopy(array, j+1, array, j, arraySize-(j+1));
         arraySize--;
-        i--;
+        j--;
       }
     }
   }

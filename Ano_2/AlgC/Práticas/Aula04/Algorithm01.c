@@ -9,9 +9,9 @@ paulobvasconcelos@gmail.comp
 
 int isSequenceContinuous(int* array, int arraySize) {
 
-  for(int i=1; i<arraySize-1; i++) {
-    if (array[i]+1!=array[i+1]) {
-      printf("Nº de operações: %d\n", i);
+  for(int i=0; i<arraySize-1; i++) {
+    if ((array[i]+1)!=(array[i+1])) {
+      printf("Nº de operações: %d\n", i+1);
       printf("Resultado: %d\n\n", 0);
       return 0;
     }
