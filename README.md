@@ -31,9 +31,10 @@ Material relativo ao curso de Engenharia de Computadores e Telemática
 - [LFA](./Ano_2/LFA)
 
 ## Colegas
-- @obiwit
-- @pedrovt
-- @LuisPedroMoura
-- @mariajoaolavoura
-- @andremourato
-- @ZePaiva
+- @obiwit - Beatriz Ribeiro
+- @pedrovt - Pedro Teixeira
+- @LuisPedroMoura - Luís Moura
+- @mariajoaolavoura - Maria João Lavoura
+- @andremourato - André Mourato
+- @ZePaiva - José Paiva
+- @MathSqr2 - Afonso Guimarães
