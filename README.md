@@ -33,6 +33,7 @@ Material relativo ao curso de Engenharia de Computadores e Telemática
 ## Colegas
 - @obiwit - Beatriz Ribeiro
 - @pedrovt - Pedro Teixeira
+- @JPCatarino - Jorge Catarino
 - @LuisPedroMoura - Luís Moura
 - @mariajoaolavoura - Maria João Lavoura
 - @andremourato - André Mourato
