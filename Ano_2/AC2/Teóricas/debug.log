@@ -1,0 +1,1 @@
+[0418/212029.941:ERROR:file_io_win.cc(243)] SetEndOfFile: A operação pedida não pode ser executada num ficheiro com uma secção aberta mapeada pelo utilizador. (0x4C8)
