@@ -1,0 +1,12 @@
+Nome: k_OS
+
+Grupo 9
+
+Tema: Linguagem para Análise Dimensional (Física)
+
+Tarefas:
+ - 2 gramáticas;
+ - 2 linguagens;
+ - Relatório;
+ - Compilador (não um Interpretador);
+ - Atenção aos elementos (des)valorizadores;
