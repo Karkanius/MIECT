@@ -30,12 +30,12 @@ Material relativo ao curso de Engenharia de Computadores e Telemática
 - [SE](./Ano_2/SE)
 - [LFA](./Ano_2/LFA)
 
-## Colegas
-- @obiwit - Beatriz Ribeiro
-- @pedrovt - Pedro Teixeira
-- @JPCatarino - Jorge Catarino
-- @LuisPedroMoura - Luís Moura
-- @mariajoaolavoura - Maria João Lavoura
-- @andremourato - André Mourato
-- @ZePaiva - José Paiva
-- @MathSqr2 - Afonso Guimarães
+## Repositórios de Colegas
+- [Afonso Guimarães](https://github.com/MathSqr2)
+- [André Mourato](https://github.com/andremourato)
+- [Beatriz Ribeiro](https://github.com/obiwit)
+- [José Paiva](https://github.com/ZePaiva)
+- [Jorge Catarino](https://github.com/JPCatarino)
+- [Luís Moura](https://github.com/LuisPedroMoura)
+- [Maria João Lavoura](https://github.com/mariajoaolavoura)
+- [Pedro Teixeira](https://github.com/pedrovt)
