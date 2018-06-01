@@ -1,0 +1,7 @@
+x,y:real;
+i: integer;
+b:boolean;
+3 -> i;
+false -> b;
+show i;
+

@@ -5,6 +5,8 @@ paulobvasconcelos@gmail.comp
 */
 
 # include <stdio.h>
+# include "Recursive01.c"
+# include "Recursive02.c"
 
 int main(void) {
 

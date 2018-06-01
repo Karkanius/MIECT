@@ -1,0 +1,5 @@
+TypeOfGraph
+NVertexes
+NEdges
+Vertexes
+Edges(From and To vertex) and cost

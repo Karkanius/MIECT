@@ -1,0 +1,3 @@
+i: integer;
+10 -> i;
+if i /= 10 then show 2*i; else show i//2; end;

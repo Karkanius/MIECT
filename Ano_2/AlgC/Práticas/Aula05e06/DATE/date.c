@@ -11,7 +11,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-Alterações e desenvolcimento de código realizado por:
+Alterações e desenvolvimento de código realizado por:
 Paulo Vasconcelos
 84987
 MIECT
